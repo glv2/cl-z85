@@ -1,0 +1,26 @@
+#+TITLE: cl-z85
+
+cl-z85 is a Common Lisp library to encode and decode data using the
+[[http://rfc.zeromq.org/spec:32/Z85][ZeroMQ base-85 encoding]].
+
+* API
+
+#+BEGIN_SRC lisp
+(z85-encode data) => string
+#+END_SRC
+
+Return the Z85 encoding of the bytes of /data/.
+
+#+BEGIN_SRC lisp
+(z85-decode string) => bytes
+#+END_SRC
+
+Return the bytes encoded in a Z85 /string/.
+
+* Tests
+
+The tests require the [[https://common-lisp.net/project/fiveam][fiveam]] library.
+
+#+BEGIN_SRC lisp
+(asdf:test-system "cl-z85")
+#+END_SRC
