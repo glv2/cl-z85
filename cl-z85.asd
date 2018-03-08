@@ -19,7 +19,7 @@
   :version "1.0"
   :license "GPL-3"
   :author "Guillaume LE VAILLANT"
-  :depends-on ("cl-z85" "fiveam")
+  :depends-on ("cl-z85" "cl-octet-streams" "fiveam")
   :in-order-to ((test-op (load-op "cl-z85/tests")))
   :perform (test-op (o s)
                     (let ((tests (uiop:find-symbol* 'cl-z85

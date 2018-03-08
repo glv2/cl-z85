@@ -6,20 +6,34 @@ cl-z85 is a Common Lisp library to encode and decode data using the
 * API
 
 #+BEGIN_SRC lisp
-(z85-encode data) => string
+(z85-encode data &optional start end) => string
 #+END_SRC
 
-Return the Z85 encoding of the bytes of /data/.
+Return the Z85 encoding of the bytes of /data/ between /start/ and
+/end/.
 
 #+BEGIN_SRC lisp
-(z85-decode string) => bytes
+(z85-decode string &optional start end) => bytes
 #+END_SRC
 
-Return the bytes encoded in a Z85 /string/.
+Return the bytes encoded as Z85 characters between /start/ and /end/
+in /string/.
+
+#+BEGIN_SRC lisp
+(z85-encode-stream data-stream z85-stream) => t
+#+END_SRC
+
+Write the Z85 encoding of /data-stream/ to /z85-stream/.
+
+#+BEGIN_SRC lisp
+(z85-decode-stream z85-stream data-stream) => t
+#+END_SRC
+
+Write the bytes encoded in /z85-stream/ to /data-stream/.
 
 * Tests
 
-The tests require the [[https://common-lisp.net/project/fiveam][fiveam]] library.
+The tests require the [[https://common-lisp.net/project/fiveam][fiveam]] and [[https://github.com/glv2/cl-octet-streams][cl-octet-streams]] libraries.
 
 #+BEGIN_SRC lisp
 (asdf:test-system "cl-z85")
