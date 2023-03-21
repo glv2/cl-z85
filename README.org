@@ -1,5 +1,7 @@
 #+TITLE: cl-z85
 
+The active repository is at https://codeberg.org/glv/cl-z85
+
 cl-z85 is a Common Lisp library to encode and decode data using the
 [[http://rfc.zeromq.org/spec:32/Z85][ZeroMQ base-85 encoding]].
 
@@ -33,7 +35,7 @@ Write the bytes encoded in /z85-stream/ to /data-stream/.
 
 * Tests
 
-The tests require the [[https://common-lisp.net/project/fiveam][fiveam]] and [[https://github.com/glv2/cl-octet-streams][cl-octet-streams]] libraries.
+The tests require the [[https://common-lisp.net/project/fiveam][fiveam]] and [[https://codeberg.org/glv/cl-octet-streams][cl-octet-streams]] libraries.
 
 #+BEGIN_SRC lisp
 (asdf:test-system "cl-z85")
